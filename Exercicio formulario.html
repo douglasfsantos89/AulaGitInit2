@@ -1,0 +1,118 @@
+li<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sem título</title>
+ <style type="text/css">
+	 *{ font-size: 24px;}
+	
+	 #central {
+		 width: 600px;
+		 margin: auto;
+	 }
+	 form{ width: 600px}
+	
+</style>
+<!--
+<script type="text/javascript" src="js/validacaoForm.js"></script>
+-->
+
+<script type="text/javascript" src="js/eventos.js"></script>
+
+</head>
+
+<body>
+<section id="central">
+<!--<form action="proc.php" method="get" onSubmit="return Valida()">-->
+<!-- Javascript externo -->
+
+<form  >
+	<fieldset>
+		<legend>Dados Pessoais</legend>
+		
+		 <div> Nome
+		  <input type="text" name="nome" id="nome" onBlur="Vcampo()" onFocus="Vlimpa()">
+		 <div>
+		 
+		 <div> Sexo
+		  <input type="radio" name="sexo" id="sexo" value="M"  onclick="Vsexo()">Masculino
+		  
+		  <input type="radio" name="sexo" id="sexo" value="F" onClick="Vsexo()">Feminino
+		  <span id="obs">*</span>
+		 <div> 
+		 
+		 <div> Estado Civil
+		    <select  name="estCivil" id="estCivil" onChange="Valtera()">
+		    	 <option value="">selecione</option>
+		    	 <option value="c">casado</option>
+		    	 <option value="s">solterio</option>
+		    	 <option value="v">viuvo(a)</option>
+		    </select>
+		    
+		    <span id="obEst">*</span>
+		 <div>
+		 
+		 <div> Conhecimento de Informática
+		 
+		    <div>
+		  <input type="checkbox" name="cinf0" id="cinf0" value="w">widows
+		 
+		    <input type="checkbox" name="cinf0" id="cinf0" value="word" onClick="VCkeckBox()">word
+		     <input type="checkbox" name="cinf0" id="cinf0" value="excel" onClick="VCkeckBox()" >excel
+		  </div>
+		  
+		  <div>
+		  	<input type="checkbox" name="cinf0" id="cinf0" value="PowerPoint"onClick="VCkeckBox()">PowerPoint
+		  	
+		  	<input type="checkbox" name="cinf0" id="cinf0" value="Acces" onClick="VCkeckBox()">Acces
+		  	
+		  	<input type="checkbox" name="cinf0" id="cinf0" value="Internet" onClick="VCkeckBox()">Internet
+		  	
+		  	<span id="obsCkeck">*</span>
+		  	
+		  </div>
+		  
+		 <div>
+		 
+		 
+		 <div>
+		 	Conte um pouco mais de você:<br>
+
+		 	<textarea name="ms" id="ms"></textarea>	
+		 	
+		 </div>
+		 
+		
+	</fieldset>
+	
+	<fieldset>
+		 <legend>Dados de Acesso</legend>
+		<div>
+			Email
+			<input type="email" name="email" id="email">
+		</div>
+		<div>
+			Senha
+			<input type="password" name="pw" id="pw">
+		</div>
+		<div>
+			Confirmação 
+			<input type="password" name="pwC" id="pwC">
+		</div>
+		
+	</fieldset>
+	
+	<div style="text-align: center">
+			
+			<input type="button" value="Enviar" id="bt" >
+			
+				<input type="reset" value="Limpar">
+		</div>
+	
+	
+</form>
+
+</section>
+
+</body>
+</html>

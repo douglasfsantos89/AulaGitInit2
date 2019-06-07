@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sem título</title>
+<script type="text/javascript" src="js/jquery-3.3.1.js">
+	</script>
+	<script>
+$(function(){
+	
+	//chamar o botão
+	$("button").eq(0).click(function(){
+		//.value javascript
+		//.val() jquery
+		//alert($("#nome").val().length);
+		
+		
+		//seleciona todos os campos com o tag input, select,button
+	// var nome = document.getElementsByTagName('input')[0];
+		 
+ var nome = $(':input').eq(0);
+		 if( (nome.val() == "") || (nome.val().length < 5)){
+		   nome.css({ 
+			  border:'1px solid red',
+			 backgroundColor :'yellow'
+		 });
+		 }
+		 
+		 // pegar todos os input que tenha os atributos type com valores text
+		 
+		 $(":text:eq(1)").css({
+			 backgroundColor :'red',
+			 border:'1px solid black'
+		 });
+		 
+		//pegar o type password
+		$(":password").css({
+			backgroundColor: "blur"
+		})
+		
+		//pegar o type: radio
+		// next pega o proximo frase ou comando no caso o span
+	 if( $(':radio:checked').val() == undefined ){
+		 
+		 $(':radio').next().css({
+			 display:'inline',
+			 background:'red'
+		 })
+		}
+		
+		//alert($(':radio:checked').val())
+		 
+		 $(':checkbox').parent().css({ 
+		 background: 'red'
+		 });
+		 
+	 });
+	
+	
+});		
+</script>
+
+<style>
+	span {display: none}
+
+	</style>
+</head>
+
+<body>
+
+<form action="" method="get">
+	<div>
+		nome:<input type="text" name="nome" id="nome">
+	</div>
+	
+	<div>
+		end:<input type="text" name="end" id="end"
+	</div>
+	
+	
+	 <div>
+	 	senha:<input type="password" name="sn" id="sn">
+	 	
+	 </div>
+	 
+	 
+	 <div>
+	 	<input type="radio" name="s" id="s" value="f"> Feminino
+	 	
+	 <input type="radio" name="s" id="s" value='m'>Masculino
+	 
+	 <span> *Campo obrigadorio</span>
+	 	
+	 </div>
+	 
+	<div>
+	 	foto:<input type="file" name="fl" id="fl">
+	 	
+	 </div>
+	 
+	 <div>
+	 	<input type="checkbox" name="f" id="f" value="php"> php
+	 	
+	 	<input type="checkbox" name="f" id="f" value="mysql"> mysql
+	 	
+	 </div>
+	 
+	<div>
+		<button type="button">ENVIAR</button>
+	</div>
+</form>
+</body>
+</html>
